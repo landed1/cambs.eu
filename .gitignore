@@ -1,6 +1,7 @@
 #Images and Miscelaneous#
 #########################
 graphics/
+.sass-cache
 
 
 # Compiled source #
@@ -40,3 +41,4 @@ graphics/
 .Trashes
 ehthumbs.db
 Thumbs.db
+=======
