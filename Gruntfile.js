@@ -23,8 +23,8 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['<%= jshint.files %>'],
-      tasks: ['jshint']
+      files: ['<%= jshint.files %>' , '_templates/**/*.html'],
+      tasks: ['jshint' , 'flats']
     }
   });
 
@@ -32,6 +32,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-flats');
 
-  grunt.registerTask('default', ['jshint' , 'flats']);
+  grunt.registerTask('default', ['jshint' , 'flats' , 'watch']);
 
 };
