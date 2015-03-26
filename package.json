@@ -1,0 +1,14 @@
+{
+  "name": "cambs.eu",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-flats": "^0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:landed1/cambs.eu.git"
+  }
+}

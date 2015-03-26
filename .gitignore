@@ -1,6 +1,7 @@
 #Images and Miscelaneous#
 #########################
 graphics/
+node_modules/
 .sass-cache
 
 
