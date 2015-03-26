@@ -7,12 +7,7 @@ node_modules/
 
 # Compiled source #
 ###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
+dist/
  
 # Packages #
 ############
