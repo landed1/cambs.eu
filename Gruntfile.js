@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
   	config: {
+  		src:'src',
 		dist: 'dist'
         },
 
@@ -17,29 +18,16 @@ module.exports = function(grunt) {
 			}
 	    }
   	},
-  	//grunt-contrib-connect
-	/*connect: {
-		server: {
-			options: {
-				open:true,
-				hostname:'localhost',
-				base: '_templates/dist',
-				livereload: true //you must have this to dynamic add the js to the html page...
-	        },
-			livereload: {
-                options: {
-                    base: ['_templates'],
-                    livereload: true,
-				},
-				files: [
-                   
-                ]
-			}
-	        
+  	
+	sass: {
+		dist:{
+			options:{},
+			files:{'<%= config.dist %>/core.css':'<%= config.src %>/core.scss'}
 		}
 		
-    },*/
-
+    },
+	
+	//grunt-contrib-connect
     connect: {
             options: {
                 spawn: false,
@@ -71,12 +59,20 @@ module.exports = function(grunt) {
     watch: {
 
     	htmlrebuild: {
-                files: ['_templates/**/*.html'],
-                tasks: ['flats'],
-                options: {
-                    livereload: true
-                }
-            },
+			files: ['_templates/**/*.html'],
+			tasks: ['flats'],
+			options: {
+				livereload: true
+			}
+		},
+
+        cssliveupdate:{
+        	files: ['<%= config.src %>/**/*.scss'],
+			tasks: ['sass'],
+			options: {
+				livereload: true
+			}
+        },
 
 		livereload: {
                 options: {
@@ -85,7 +81,7 @@ module.exports = function(grunt) {
                 files: [
                     '_templates/**/*.html',
                 ]
-            },
+		},
 
     }
 
@@ -96,10 +92,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-flats');
+  grunt.loadNpmTasks('grunt-contrib-sass');
  
 
   grunt.registerTask('default', ['jshint',
 								'flats' ,
+								'sass' ,
 								'connect',
 								'watch']);
 
