@@ -10,7 +10,7 @@ module.exports = function(grunt) {
   	flats: {
 	    build: {
 			options: {
-		        basePath: '_templates',
+		        basePath: '<%= config.src %>/_templates',
 		        layoutPath: 'layouts',
 		        partialPath: 'partials',
 		        masterSrc: 'masterpage/index.html',
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 	sass: {
 		dist:{
 			options:{},
-			files:{'<%= config.dist %>/core.css':'<%= config.src %>/core.scss'}
+			files:{'<%= config.dist %>/core.css':'<%= config.src %>/scss/core.scss'}
 		}
 		
     },
@@ -70,6 +70,12 @@ module.exports = function(grunt) {
                 	cwd: 'dist/images/',
                 	src: ['**'],
                 	dest: '/Users/calvincrane/Sites/cambs.eu/templates/cambs/images/'
+                	},
+                	{
+                	expand: true,
+                	cwd: 'dist/images/',
+                	src: ['**'],
+                	dest: '/Users/calvincrane/Sites/cambs.eu/templates/cambs/images/'
                 	}
                 	]
     	}
@@ -98,7 +104,7 @@ module.exports = function(grunt) {
                     livereload: '<%= connect.livereload.options %>'
                 },
                 files: [
-                    '_templates/**/*.html',
+                    '<%= config.src %>/_templates/**/*.html',
                 ]
 		},
 
