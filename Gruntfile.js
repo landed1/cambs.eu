@@ -55,6 +55,25 @@ module.exports = function(grunt) {
       }
     },
 
+    copy:{
+    	updateLocalhost:{
+    		files: [{
+                    src: 'dist/core.css',
+                    dest: '/Users/calvincrane/Sites/cambs.eu/templates/jumbotron/css/core.css'
+                	},
+                	{
+                    src: 'dist/core.css',
+                    dest: '/Users/calvincrane/Sites/cambs.eu/templates/cambs/css/core.css'
+                	},
+                	{
+                	expand: true,
+                	cwd: 'dist/images/',
+                	src: ['**'],
+                	dest: '/Users/calvincrane/Sites/cambs.eu/templates/cambs/images/'
+                	}
+                	]
+    	}
+    },
 
     watch: {
 
@@ -93,12 +112,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-flats');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-copy');
  
 
   grunt.registerTask('default', ['jshint',
 								'flats' ,
 								'sass' ,
 								'connect',
+								'copy',
 								'watch']);
 
 };
