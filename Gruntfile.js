@@ -4,22 +4,22 @@ module.exports = function(grunt) {
 
   	config: {
   		src:'src',
-		dist: 'dist'
+		  dist: 'dist'
         },
 
   	flats: {
 	    build: {
-			options: {
-		        basePath: '<%= config.src %>/_templates',
-		        layoutPath: 'layouts',
-		        partialPath: 'partials',
-		        masterSrc: 'masterpage/index.html',
-		        destPath: '<%= config.dist %>'
-			}
+  			options: {
+  		        basePath: '<%= config.src %>/_templates',
+  		        layoutPath: 'layouts',
+  		        partialPath: 'partials',
+  		        masterSrc: 'masterpage/index.html',
+  		        destPath: '<%= config.dist %>'
+  			}
 	    }
   	},
   	
-	sass: {
+    sass: {
 		dist:{
 			options:{},
 			files:{'<%= config.dist %>/core.css':'<%= config.src %>/scss/core.scss'}
@@ -56,57 +56,87 @@ module.exports = function(grunt) {
     },
 
     copy:{
+
+      js:{
+        files:[
+                /*static build copy below to test and debug the js*/
+                {
+                    src: 'bower_components/jquery/dist/jquery.min.js',
+                    dest:'/Users/calvincrane/Sites/cambs.eu/templates/cambs/js/jquery.min.js'
+                },
+                {
+                    src: 'bower_components/jquery/dist/jquery.min.js',
+                    dest:'/Users/calvincrane/encours/cambs.eu/dist/js/jquery.min.js'
+                },
+                {
+                    src: 'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
+                    dest: '/Users/calvincrane/Sites/cambs.eu/templates/cambs/js/bootstrap.min.js'
+                },
+                {
+                    src: 'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
+                    dest:'/Users/calvincrane/encours/cambs.eu/dist/js/bootstrap.min.js'
+                },
+                {
+                    src: 'src/js/app.js',
+                    dest: 'dist/js/app.js'
+                }
+              ]
+      },
+
     	updateLocalhost:{
-    		files: [{
+    		files: [
+                /*utility copy for the localhost site to get the built css eventually js as well*/
+                {
                     src: 'dist/core.css',
                     dest: '/Users/calvincrane/Sites/cambs.eu/templates/jumbotron/css/core.css'
-                	},
-                	{
+                },
+                {
                     src: 'dist/core.css',
                     dest: '/Users/calvincrane/Sites/cambs.eu/templates/cambs/css/core.css'
-                	},
-                	{
-                	expand: true,
+                },
+                {
+                  expand: true,
                 	cwd: 'dist/images/',
                 	src: ['**'],
                 	dest: '/Users/calvincrane/Sites/cambs.eu/templates/cambs/images/'
-                	},
-                	{
-                	expand: true,
-                	cwd: 'dist/images/',
-                	src: ['**'],
-                	dest: '/Users/calvincrane/Sites/cambs.eu/templates/cambs/images/'
-                	}
-                	]
+                }
+                
+                ]
     	}
     },
 
     watch: {
 
-    	htmlrebuild: {
-			files: ['_templates/**/*.html'],
-			tasks: ['flats'],
-			options: {
-				livereload: true
-			}
-		},
+      options: {livereload: true},
 
-        cssliveupdate:{
-        	files: ['<%= config.src %>/**/*.scss'],
-			tasks: ['sass'],
-			options: {
-				livereload: true
-			}
-        },
+      gruntfile: {
+        files: 'Gruntfile.js',
+        tasks: ['flats'],
+      },
 
-		livereload: {
-                options: {
-                    livereload: '<%= connect.livereload.options %>'
-                },
-                files: [
-                    '<%= config.src %>/_templates/**/*.html',
-                ]
-		},
+    	htmlRebuild: {
+        files: ['<%= config.src %>/**/*.html'],
+        tasks: ['flats'],
+      },
+
+      jsRebuild: {
+        files: ['<%= config.src %>/**/*.js'],
+        tasks: ['copy:js'],
+		  },
+
+      cssRebuild:{
+        files: ['<%= config.src %>/**/*.scss'],
+        tasks: ['sass','copy']
+      },
+
+  		livereload: {
+                  options: {
+                      livereload: '<%= connect.livereload.options %>'
+                  },
+                  files: [
+                      '<%= config.src %>/_templates/**/*.html',
+                  ]
+  		},
 
     }
 
@@ -121,7 +151,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
  
 
-  grunt.registerTask('default', ['jshint',
+  grunt.registerTask('default', [
 								'flats' ,
 								'sass' ,
 								'connect',
