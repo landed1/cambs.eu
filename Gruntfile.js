@@ -56,6 +56,16 @@ module.exports = function(grunt) {
     },
 
     copy:{
+    	fonts:{
+	    	files:[
+	    		{
+	    			expand: true,
+                	cwd: 'bower_components/bootstrap-sass/assets/fonts/bootstrap',
+                	src: ['**'],
+                	dest: '/Users/calvincrane/encours/cambs.eu/dist/fonts/bootstrap'
+                }
+	        ]
+      },
 
       js:{
         files:[
