@@ -12,7 +12,18 @@
 	background: url(../images/header-overlay.jpg) 50% 0px no-repeat;
 }
 
-@media (min-width: $screen-sm-min){
+//@media (max-width: $screen-sm-min){
+	#logo {
+	  background: url(../images/logo_sm.png) 0 0 no-repeat;
+	  display: block;
+	  width: 105px;
+	  height: 22px;
+	  margin-top: 3px;
+	  margin-bottom: 3px;
+	}
+//}
+
+//@media (min-width: $screen-sm-min){
 	#logo {
 	  background: url(../images/logo.png) 0 0 no-repeat;
 	  display: block;
@@ -21,7 +32,7 @@
 	  margin-top: 10px;
 	  margin-bottom: 10px;
 	}
-}
+//}
 
 .cambs-block{
   margin-bottom: 10px;
@@ -71,7 +82,30 @@
 /*top menu*/
 
 /*style taken from the mod_bootstrapnav phptemplate file where it was harder to find and modify..*/
+
+.navbar-default{
+	border:none;
+}
+
+@media(min-width: $screen-sm-min){
+
+	ul.navbar-nav {
+		background-color:rgba(86,120,3,0.4);
+		border: 2px solid rgba(86,120,3,0.4);
+	    border-radius:0px 0px 8px 8px;
+	    border-top:none;
+	}
+
+	.navbar-default .navbar-nav > li > a{
+		color:#d9e4ff;
+	}
+
+}
+
+
 /*
+
+
 .navbar-nav > li > a{
      color:#555;
      text-shadow: 0 0 0 !important;
@@ -125,6 +159,8 @@
 .nav >li > a:hover {
 	//color:#678f04 !important;
 }
+
+
 
 // media query for narrow to add the border and background fills..or rather overide the larger device only..
 @media (min-width: $screen-sm-min){
