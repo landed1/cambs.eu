@@ -14,5 +14,9 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:landed1/cambs.eu.git"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.3.4",
+    "fastclick":"^1.0.6"
   }
 }

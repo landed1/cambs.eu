@@ -1,0 +1,21 @@
+{
+  "name": "cambs.eu",
+  "version": "0.0.0",
+  "homepage": "https://github.com/landed1/cambs.eu",
+  "authors": [
+    "Calvin Crane <calvincrane@gmail.com>"
+  ],
+  "description": "local website build",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.4",
+    "fastclick": "~1.0.6"
+  }
+}

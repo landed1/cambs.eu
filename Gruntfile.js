@@ -83,17 +83,25 @@ module.exports = function(grunt) {
                     dest: '/Users/calvincrane/Sites/cambs.eu/templates/cambs/js/bootstrap.min.js'
                 },
                 {
+                    src: 'bower_components/fastclick/lib/fastclick.js',
+                    dest:'/Users/calvincrane/encours/cambs.eu/dist/js/fastclick.js'
+                },
+                {
                     src: 'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
                     dest:'/Users/calvincrane/encours/cambs.eu/dist/js/bootstrap.min.js'
                 },
                 {
+                    src: 'src/js/flowplayer.js',
+                    dest: 'dist/js/flowplayer.js'
+                }
+                ,{
                     src: 'src/js/app.js',
                     dest: 'dist/js/app.js'
                 }
               ]
       },
 
-    	updateLocalhost:{
+    updateLocalHost:{
     		files: [
                 /*utility copy for the localhost site to get the built css eventually js as well*/
                 {
@@ -109,6 +117,12 @@ module.exports = function(grunt) {
                 	cwd: 'dist/images/',
                 	src: ['**'],
                 	dest: '/Users/calvincrane/Sites/cambs.eu/templates/cambs/images/'
+                },
+                {
+                  expand: true,
+                	cwd: 'dist/js/',
+                	src: ['**'],
+                	dest: '/Users/calvincrane/Sites/cambs.eu/templates/cambs/js/'
                 }
                 
                 ]
@@ -131,7 +145,7 @@ module.exports = function(grunt) {
 
       jsRebuild: {
         files: ['<%= config.src %>/**/*.js'],
-        tasks: ['copy:js'],
+        tasks: ['copy:js','copy:updateLocalHost'],
 		  },
 
       cssRebuild:{

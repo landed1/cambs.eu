@@ -1,0 +1,113 @@
+/* Copyright Fontsmith Ltd 2012 - for use on WEB ONLY */
+
+/* First define your webfont */
+
+@font-face {
+    font-family: 'FSBlake';
+    src: url('../fonts/FSBlakeWebRegular/fs_blake_web-regular.eot');
+    src: url('../fonts/FSBlakeWebRegular/fs_blake_web-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/FSBlakeWebRegular/fs_blake_web-regular.woff') format('woff'),
+         url('../fonts/FSBlakeWebRegular/fs_blake_web-regular.svg#fsblakeweb-regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Set you webfont */
+
+body{
+		-webkit-text-rendering: optimizeLegibility;	    	
+		-moz-text-rendering: optimizeLegibility;
+    	-ms-text-rendering: optimizeLegibility;
+    	-o-text-rendering: optimizeLegibility;
+    	text-rendering: optimizeLegibility; 
+		font-family: FSBlake, Arial, sans-serif; 
+	}
+
+
+/* Set your leading */
+
+.size12, .size13, .size14, .size15, .size16, .size17, .size18	{
+	line-height:1.3em;
+	}
+
+.size19, .size20, .size21, .size22, .size23, .size24	{
+	line-height:1.25em;
+	}
+
+.size36, .size48	{
+	line-height:1.2em;
+	}
+
+.size72, .size96	{
+	line-height:1em;
+	}
+
+/* Define your font-sizes */
+
+.size12	{
+	font-size:12px;
+	}
+
+.size13	{
+	font-size:13px;
+	}
+
+.size14	{
+	font-size:14px;
+	}
+
+.size15	{
+	font-size:15px;
+	}
+
+.size16	{
+	font-size:16px;
+	}
+
+.size17	{
+	font-size:17px;
+	}
+
+.size18	{
+	font-size:18px;
+	}
+
+.size19	{
+	font-size:19px;
+	}
+
+.size20	{
+	font-size:20px;
+	}
+
+.size21	{
+	font-size:21px;
+	}
+
+.size22	{
+	font-size:22px;
+	}
+
+.size23	{
+	font-size:23px;
+	}
+
+.size24	{
+	font-size:24px;
+	}
+
+.size36	{
+	font-size:36px;
+	}
+
+.size48	{
+	font-size:48px;
+	}
+
+.size72	{
+	font-size:72px;
+	}
+
+.size96	{
+	font-size:96px;
+	}
