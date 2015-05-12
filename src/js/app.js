@@ -16,29 +16,18 @@ function myTimer() {
 $(function() {
 	
 	//FastClick.attach(document.body);
-    	/*$('#video-enabler').on('click',function(){
-    	alert('clicked');
-    	api.play();
-    })*/
-	console.log('JQ is ready');
+	console.log($('footer'));
+
+	$('#totop').on('click',function(event){
+		var myFx = new Fx.Scroll(window, {
+    									offset: {
+        								x: 0,
+        								y: 0}
+			}).toTop();
+	})
+    	
+	//console.log('JQ is ready');
 });
 
 
-
-
-
-
-
-flowplayer(function (api, root) {
- 
-  api.bind("load", function () {
-  	console.log('FP im loaded');
-
-  }).bind("ready", function () {
-  	console.log('FP im ready');
-	document.getElementById("video-enabler").onclick = function(){console.log('click');}
-
-  });
- 
-});
 
