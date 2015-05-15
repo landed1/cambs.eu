@@ -23,7 +23,7 @@
 	border-radius:20px 20px 20px 20px;
 	border-left:none;
 	border-right:none;
-	margin-top: -60px;
+	margin-top: -40px;
 	margin-bottom: -60px;
 }
 
@@ -44,8 +44,7 @@
 
 
 }
-#totop{
-}
+
 .cambs-header-overlay{
 	background: url(../images/header-overlay.jpg) 50% 0px no-repeat;
 	min-height:350px;//careful mobile todo...
@@ -58,9 +57,19 @@ footer div{
 	bottom: 4px;
 }
 
+.row.social{
+	padding-bottom: 8px;
+}
+
 #totop{
 	cursor: pointer;
 	float: right;
+	text-align: right;
+  	margin-right: 15px;
+}
+
+.moduletable.webdesign{
+	padding: 20px;
 }
 
 .jumbotron{
@@ -148,7 +157,7 @@ footer div{
 			//min-height:900px;
 			height: 100%;
 			img{
-				max-width: 800px;
+				max-width: 523px;
 				width: 100%;
 			}
 			.carousel-caption{
@@ -252,6 +261,7 @@ footer div{
 .contact{
 	@extend .well;
 	@extend .well-sm;
+	margin: 20px;
 }
 
 @media (min-width: 768px) {
