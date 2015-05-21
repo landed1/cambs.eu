@@ -1,3 +1,15 @@
+/*http://stackoverflow.com/questions/10462747/twitter-bootstrap-carousel-using-joomla-and-its-mootools*/
+if (typeof jQuery != 'undefined') { 
+(function($) { 
+       $(document).ready(function(){
+        $('.carousel').each(function(index, element) {
+                $(this)[index].slide = null;
+               });
+         });
+ })(jQuery);
+}
+/*END OF http://stackoverflow.com/questions/10462747/twitter-bootstrap-carousel-using-joomla-and-its-mootools*/
+
 //console.log($);
 
 //var myVar=setInterval(function () {myTimer()}, 1000);
@@ -16,7 +28,7 @@ function myTimer() {
 $(function() {
 	
 	//FastClick.attach(document.body);
-	console.log($('footer'));
+	//console.log($('footer'));
 
 	$('#totop').on('click',function(event){
 		var myFx = new Fx.Scroll(window, {

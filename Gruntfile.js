@@ -21,7 +21,7 @@ module.exports = function(grunt) {
   	
     sass: {
 		dist:{
-			options:{},
+			options:{sourcemap:'none'},
 			files:{'<%= config.dist %>/core.css':'<%= config.src %>/scss/core.scss'}
 		}
 		
@@ -91,6 +91,10 @@ module.exports = function(grunt) {
                 {
                     src: 'bower_components/fastclick/lib/fastclick.js',
                     dest:'/Users/calvincrane/encours/cambs.eu/dist/js/fastclick.js'
+                },
+                {
+                    src: 'src/js/carousel.js',
+                    dest: 'dist/js/carousel.js'
                 },
                 {
                     src: 'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
